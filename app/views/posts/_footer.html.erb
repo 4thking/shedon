@@ -1,0 +1,86 @@
+    <footer>
+        <div class="footer-top">
+            <div class="logo">
+                <%= link_to image_tag("logotest.png"), "/" %>
+                <span class="border-bottom"></span>
+            </div>
+            <div class="widget first">
+                <div class="desc">
+                    <p> Built on the foundtain of intellectual freedom and tolerance the Shedonist is dedicated to you. </p>
+                    <p> Wherever you are on your journey we will have the content you deserve </p>
+                </div>
+                <ul class="info">
+                    <li class="address">Toronto, Ontario</li>
+                    <li class="mail"><a href="mailto:awesome@website.com">contact@theshedonist.com</a></li>
+                </ul>
+            </div>
+            <div class="widget">
+                <div class="title">
+                    <h3>latest news</h3>
+                </div>
+                <div class="news">
+                    <% @footer.each do |post| %>
+                    <article class="twoboxes">
+                        <div class="post-thumb">
+                            <% if post.image.present? %>
+                                            <%= image_tag post.image.big_thumb.url %>
+                                        <% else %>
+                            <a href="blog-single.html"><img src="http://dummyimage.com/108x58/413d3c/fff.png" alt=""></a>
+                                        <% end %>
+                            <div class="overlay">
+                                <div class="op"></div>
+                                <div class="cat">
+                                    <div class="icon"></div>
+                                    <%= post.category.name %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-desc">
+                            <h3><a href=""><%= link_to "#{post.title}", post %></a></h3>
+                            <div class="clear"></div>
+                            <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>    
+                        </div>
+                    </article>
+                    <% end %>
+                </div>
+            </div>
+            <div class="widget last">
+                <div class="title">
+                    <h3>most popular</h3>
+                </div>
+                <div class="news">
+                    <% @footer2.each do |post| %>
+                    <article class="twoboxes">
+                        <div class="post-thumb">
+                            <% if post.image.present? %>
+                                            <%= image_tag post.image.big_thumb.url %>
+                                        <% else %>
+                            <a href="blog-single.html"><img src="http://dummyimage.com/108x58/413d3c/fff.png" alt=""></a>
+                                        <% end %>
+                            <div class="overlay">
+                                <div class="op"></div>
+                                <div class="cat">
+                                    <div class="icon"></div>
+                                    <%= post.category.name %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-desc">
+                            <h3><a href=""><%= link_to "#{post.title}", post %></a></h3>
+                            <div class="clear"></div>
+                            <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>    
+                        </div>
+                    </article>
+                    <% end %>
+                </div>
+            </div>
+            
+            <div class="clear"></div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>Copyright 2015 @ <span>4th Kind Canada</span>. // </p>
+            </div>
+            <div class="clear"></div>
+        </div>  
+    </footer>

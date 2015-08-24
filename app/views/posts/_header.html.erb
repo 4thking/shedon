@@ -1,0 +1,18 @@
+        <header>
+            <div class="border-left"></div>
+            <div class="logo">
+                <%= link_to image_tag("logotest.png"), "/" %>
+                <span class="border-bottom"></span>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><span class="border-bottom"></span><%= link_to 'News', categories_path(:category_id => 1) %></li>
+                    <li><span class="border-bottom"></span><%= link_to 'Wellness', categories_path(:category_id => 2) %></li>
+                    <li><span class="border-bottom"></span><%= link_to 'Entertainment', categories_path(:category_id => 3) %></li>
+                    <li><span class="border-bottom"></span><%= link_to 'Politics', categories_path(:category_id => 4) %></li>
+                    <li><span class="border-bottom"></span><%= link_to 'Business', categories_path(:category_id => 8) %> </li>
+                    <li><span class="border-bottom"></span><%= link_to 'Spirituality', categories_path(:category_id => 10) %> </li>
+                </ul>                                              
+            </nav>   
+            <div class="clear"></div>
+        </header>

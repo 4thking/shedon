@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"  content="initial-scale=1, width=device-width">
+
+<title>Category</title>
+
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+<!--[if  IE]>
+<link rel="stylesheet" type="text/css" href="css/ie.css" />
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+    
+    <!-- start div #wrapper -->
+    <div id="wrapper">
+        
+        <!-- start header -->
+        <%= render 'posts/header' %>
+        <!-- end header -->
+        
+        <!-- start div #main-title -->
+        <div class="main-title">
+          <% @title.each do |post| %>
+          <% if post.name.present? %>
+            <p><%= post.name %></p>
+          <% else %>
+            <p> Categories </p>
+          <% end %>  
+          <% end %>  
+
+        </div>
+        <!-- end div #main-title -->
+        
+    <!-- start div #main -->
+      <div id="main">
+            <div class="main-content">
+              <div class="left-container">
+                  <div class="marked-title">
+                    <% @title.each do |post| %>
+                    <% if post.name.present? %>
+                          <h3> <%= post.name %></h3>
+                        <% else %>
+                          <h3> Categories </h3>
+                      <% end %>  
+                      <% end %>  
+                    </div>
+
+                    <!-- Left Large Box -->
+
+                    <div class="row-fluid">
+                        <div class="span2">
+                          <% @bigpost.each do |post| %>
+                            <article>
+                                <div class="post-thumb">
+
+                                  <% if post.image.present? %>
+                                     <%= image_tag post.image.big_thumb.url %>
+                                  <% else %>
+                                      <img src="http://dummyimage.com/90x44/413d3c/fff.png" alt="">
+                                    <% end %>
+
+
+                                    <div class="overlay">
+                                        <div class="op"></div>
+                                        <div class="cat">
+                                            <div class="icon"></div>
+                                            <% @title.each do |post| %>
+                                                <% if post.name.present? %>
+                                                  <p><%= post.name %></p>
+                                                <% else %>
+                                                  <p> Categories </p>
+                                                <% end %>  
+                                              <% end %>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cat-post-desc">
+                                    <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
+                                    <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+                                    <p><%= post.body.truncate(200) %></p>
+                                </div>
+                            </article>
+                            <% end %>
+
+                            <!-- Left Large Box end ********************-->
+
+                            <!-- Left Column -->
+
+                            <% @posts.each do |post| %>
+                            <article class="small">
+                                <div class="post-thumb">
+                                  <% if post.image.present? %>
+                                     <%= image_tag post.image.thumb.url %>
+                                  <% else %>
+                                    <a href="blog-single.html"><img src="http://dummyimage.com/156x85/413d3c/fff.png" alt=""></a>
+                                  <% end %>
+                                    <div class="overlay">
+                                        <div class="op"></div>
+                                        <div class="cat">
+                                            <div class="icon"></div>
+                                              <% @title.each do |post| %>
+                                                <% if post.name.present? %>
+                                                  <p><%= post.name %></p>
+                                                <% else %>
+                                                  <p> Categories </p>
+                                                <% end %>  
+                                              <% end %>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cat-post-desc">
+                                    <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+                                    <h3><%= link_to "#{post.title}", post %></h3>
+                                </div>
+                            </article>
+                            <% end %>
+                        </div>
+
+                        <!-- Left Column Ends -->
+
+
+
+                        <div class="span2">
+                            <article>
+                              <% @bigpost2.each do |post| %>
+                                <div class="post-thumb">
+                                    <% if post.image.present? %>
+                                       <%= image_tag post.image.big_thumb.url %>
+                                    <% else %>
+                                        <img src="http://dummyimage.com/90x44/413d3c/fff.png" alt="">
+                                      <% end %>
+
+                                    <div class="overlay">
+                                        <div class="op"></div>
+                                        <div class="cat">
+                                            <div class="icon"></div>
+                                            <% @title.each do |post| %>
+                                                <% if post.name.present? %>
+                                                  <p><%= post.name %></p>
+                                                <% else %>
+                                                  <p> Categories </p>
+                                                <% end %>  
+                                                <% end %>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cat-post-desc">
+                                    <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
+                                    <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+                                    <p><%= post.title %></p>
+                                </div>
+                            </article>
+                            <% end %>
+
+                            <% @posts2.each do |post| %>
+                            <article class="small">
+                                <div class="post-thumb">
+                                  <% if post.image.present? %>
+                                     <%= image_tag post.image.thumb.url %>
+                                  <% else %>
+                                    <a href="blog-single.html"><img src="http://dummyimage.com/156x85/413d3c/fff.png" alt=""></a>
+                                  <% end %>
+                                    <div class="overlay">
+                                        <div class="op"></div>
+                                        <div class="cat">
+                                            <div class="icon"></div>
+                                              <% @title.each do |post| %>
+                                                <% if post.name.present? %>
+                                                  <p><%= post.name %></p>
+                                                <% else %>
+                                                  <p> Categories </p>
+                                                <% end %>  
+                                              <% end %>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cat-post-desc">
+                                    <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+                                    <h3><%= link_to "#{post.title}", post %></h3>
+                                </div>
+                            </article>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="right-container">
+                    <div class="sidebar">
+                        <%= render 'posts/social' %>
+                        <div class="widget">
+                            <div class="marked-title">
+                                <h3>ads</h3>
+                            </div>
+                            <img class="ads" src="img/ads.jpg" alt="">
+                            <div class="clear"></div>
+                        </div>
+                        <div class="widget">
+                            <ul class="nav nav-tabs" id="myTab">
+                                <li class="active"><a href="#tab-1" data-toggle="tab">latest</a></li>
+                                <li><a href="#tab-2" data-toggle="tab">popular</a></li>
+                                <li><a href="#tab-3" data-toggle="tab">commented</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab-1">
+                                    <div class="news">
+                                        <% @latest.each do |post| %>
+                                        <div class="item">
+                                            <h3><a href=""><%= link_to "#{post.title}", post %></a></h3>
+                                            <p><%= post.created_at.strftime("%B %d, %Y") %></p>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <% end %>
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab-2">
+                                    <div class="news">
+                                        <% @random.shuffle.each do |post| %>
+                                        <div class="item">
+                                            <h3><a href=""><%= link_to "#{post.title}", post %></a></h3>
+                                            <p><%= post.created_at.strftime("%B %d, %Y") %></p>
+                                            <div class="clear"></div>
+                                        </div>
+                                       <% end %>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab-3">
+                                    <div class="news">
+                                        <% @random.each do |post| %>
+                                        <div class="item">
+                                            <h3><a href=""><%= link_to "#{post.title}", post %></a></h3>
+                                            <p><%= post.created_at.strftime("%B %d, %Y") %></p>
+                                            <div class="clear"></div>
+                                        </div>
+                                             <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>  
+        </div>
+      <!-- end div #main -->
+    
+    </div>
+  <!-- end div #wrapper -->    
+    
+    <!-- start footer -->
+    <%= render "posts/footer" %>
+    </footer>
+
+    <%= render 'posts/dropdown' %>
+
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+    <script type="text/javascript" src="js/html5shiv.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/functions.js" ></script> 
+
+</body>
+
+</html>
