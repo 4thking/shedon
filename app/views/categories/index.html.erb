@@ -89,7 +89,7 @@
                                 <div class="cat-post-desc">
                                     <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
                                     <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
-                                    <p><%= post.body.truncate(200) %></p>
+                                    <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                                 </div>
                             </article>
                             <% end %>
@@ -159,7 +159,7 @@
                                 <div class="cat-post-desc">
                                     <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
                                     <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
-                                    <p><%= post.title %></p>
+                                    <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                                 </div>
                             </article>
                             <% end %>
