@@ -65,7 +65,7 @@
                                 <h3>you may also want to read</h3>
                             </div>
                             <div class="row-fluid">
-                                <% @sci.each do |post| %>
+                                <% @also.each do |post| %>
                                     <div class="span4">
                                         <article class="small single">
                                             <div class="post-thumb">
@@ -78,7 +78,7 @@
                                                     <div class="op"></div>
                                                     <div class="cat">
                                                         <div class="icon"></div>
-                                                        world
+                                                        <%= post.category.name %>
                                                     </div>
                                                 </div>
                                             </div>

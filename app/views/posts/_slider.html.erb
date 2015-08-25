@@ -4,7 +4,7 @@
                 <div class="cn_content bg-1" style="top:0px; background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -16,7 +16,7 @@
                 <div class="cn_content bg-2" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -28,7 +28,7 @@
                 <div class="cn_content bg-3" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -41,7 +41,7 @@
                 <div class="cn_content bg-4" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -53,7 +53,7 @@
                 <div class="cn_content bg-4" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -65,7 +65,7 @@
                 <div class="cn_content bg-4" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -77,7 +77,7 @@
                 <div class="cn_content bg-4" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -89,7 +89,7 @@
                 <div class="cn_content bg-4" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -101,7 +101,7 @@
                 <div class="cn_content bg-4" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -113,7 +113,7 @@
                 <div class="cn_content bg-4" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -125,7 +125,7 @@
                 <div class="cn_content bg-4" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>
@@ -137,7 +137,7 @@
                 <div class="cn_content bg-4" style="background:url(<%= post.image.slider %>); no-repeat center #ffffff">
                     <div class="caption">
                         <h3><a href="blog-single.html"><%= link_to "#{post.title}", post %></a></h3>
-                        <p><%= post.body.truncate(230) %></p>
+                        <p><%= sanitize post.body.truncate(230), tags: %w(table tr td), attributes: %w(id class style) %></p>
                         <div class="date">
                             <P><%= post.created_at.strftime("%d") %><br><span><%= post.created_at.strftime("%B") %></span></P>
                         </div>

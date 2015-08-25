@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_user, except: [:index, :show]
@@ -60,6 +61,7 @@ class PostsController < ApplicationController
     @popular2 = Post.limit(6).order("RANDOM()")
     @footer = Post.limit(3).order('created_at DESC')
     @footer2 = Post.limit(3).order("RANDOM()")
+    @also = Post.limit(4).order("RANDOM()")
 
   end
 
@@ -129,5 +131,4 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body, :image, :category_id)
     end
-
 end
