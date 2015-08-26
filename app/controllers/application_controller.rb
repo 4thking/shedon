@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
   #   # Let's prepare a nice set of defaults
 
     defaults = {
+      site: 'The Shedonist',
       title:       'The Shedonist',
       description: 'The Shedonist',
       keywords:    %w[Feminism Women Social Justice Liberalism],

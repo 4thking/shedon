@@ -63,7 +63,8 @@ class PostsController < ApplicationController
     @footer2 = Post.limit(3).order("RANDOM()")
     @also = Post.limit(4).order("RANDOM()")
 
-     prepare_meta_tags(title: @post.title,
+     prepare_meta_tags(site: 'The Shedonist',
+                      title: @post.title,
                       description: @post.body,
                       image: @post.image,
                       twitter: {card: "summary_large_image"})
