@@ -24,17 +24,17 @@ class ApplicationController < ActionController::Base
 
     defaults = {
       title:       'The Shedonist',
-      description: description,
+      description: 'The Shedonist',
       keywords:    %w[Feminism Women Social Justice Liberalism],
       twitter:     {
                     site: '@TheShedonistMag',
                     card: 'summary',
-                    description: description, 
+                    description: 'The Shedonist', 
                     },
 
       og:          {url: current_url,
-                    title: title,
-                    description: description,
+                    title: 'The Shedonist',
+                    description: 'The Shedonist',
                     type: 'website'}
     }
 
