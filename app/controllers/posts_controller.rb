@@ -66,7 +66,7 @@ class PostsController < ApplicationController
      prepare_meta_tags(site: 'The Shedonist',
                       title: @post.title,
                       description: @post.body,
-                      image: @post.image(:big_thumb),
+                      image: @post.image,
                       twitter: {card: "summary_large_image"})
 
   end
